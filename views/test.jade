@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Input
+  form(name="inForm")
+    textarea(name="inData" row="10")
+    input(type="button" value="Format" onClick="formatData()")
+  p Result
+  form(name="outForm")
+    textarea(name="outData" row="10" readOnly)
+
+  script(type="text/javascript").
+    function formatData(){
+      var d = document.inForm.inData.value;
+      var obj = JSON.parse(d);
+      var formatted = JSON.stringify(obj, null, 4);
+      document.outForm.outData.value = formatted;
+      document.outForm.outData.style.height = formatted.split("\n").length + "em";
+    }
+
