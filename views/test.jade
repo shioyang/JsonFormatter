@@ -14,7 +14,13 @@ block content
   script(type="text/javascript").
     function formatData(){
       var d = document.inForm.inData.value;
-      var obj = JSON.parse(d);
+      var obj = {};
+      try{
+        obj = JSON.parse(d);
+      }catch(e){
+        document.outForm.outData.value = e.toString();
+        return;
+      }
       var formatted = JSON.stringify(obj, null, 4);
       document.outForm.outData.value = formatted;
       document.outForm.outData.style.height = formatted.split("\n").length + "em";
