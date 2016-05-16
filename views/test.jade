@@ -5,11 +5,11 @@ block content
   p Welcome to #{title}
   p Input
   form(name="inForm")
-    textarea(name="inData" row="10")
+    textarea(name="inData" row="10" style='width: 30em; height: 10em;')
     input(type="button" value="Format" onClick="formatData()")
   p Result
   form(name="outForm")
-    textarea(name="outData" row="10" readOnly)
+    textarea(name="outData" row="10" readOnly style='width: 30em; resize: none;')
 
   script(type="text/javascript").
     function formatData(){
