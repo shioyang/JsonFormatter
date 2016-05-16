@@ -3,13 +3,13 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  p Input
-  form(name="inForm")
-    textarea(name="inData" row="10" style='width: 60em; height: 10em;')
-    input(type="button" value="Format" onClick="formatData()" style='margin: 0 20px 0 20px;')
-  p Result
-  form(name="outForm")
-    textarea(name="outData" row="10" readOnly style='width: 60em; resize: none;')
+  h3 Input
+  form.form-group(name="inForm")
+    textarea.form-control(name="inData" row="10" style='width: 60em; height: 10em;')
+    input.btn.btn-default(type="button" value="Format" onClick="formatData()" style='margin: 10px 0 0 0;')
+  h3 Result
+  form.form-group(name="outForm")
+    textarea.form-control(name="outData" row="10" readOnly style='width: 60em; resize: none;')
 
   script(type="text/javascript").
     function formatData(){
