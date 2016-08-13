@@ -1,2 +1,2 @@
 # JsonFormatter
-Format JSON
+Format JSON on client side
